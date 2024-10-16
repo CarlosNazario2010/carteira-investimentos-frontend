@@ -1,0 +1,86 @@
+[33mcommit 48ee126543d79382d80a52c6cc265f596d05ad68[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Carlos Nazario <carlosnazario2010cn@gmail.com>
+Date:   Wed Oct 16 07:57:00 2024 -0300
+
+    implementando as funcionalidades de login e cadastro de cliente
+
+[33mcommit ab9984dc0f65ed019cd38b230bd9fff3d954db66[m
+Author: Fernanda <nanda.kipper@gmail.com>
+Date:   Sun Apr 28 18:18:08 2024 -0300
+
+    feat: add docker and nginx config
+
+[33mcommit 73c9c41f16058040097b6064e012f9f23a7d8dd5[m
+Author: Fernanda <nanda.kipper@gmail.com>
+Date:   Sat Apr 13 18:26:48 2024 -0300
+
+    feat: add docker file
+
+[33mcommit 16cf1489a07ad126b71b60bac506c70dc7b356e0[m
+Author: Fernanda <nanda.kipper@gmail.com>
+Date:   Wed Mar 27 17:31:27 2024 -0300
+
+    feat: add readme
+
+[33mcommit ef2cefc06f1f7077bcb0f21be6272a330ef4a52a[m
+Merge: 921ced1 e596a1d
+Author: Fernanda Kipper <nanda.kipper@gmail.com>
+Date:   Wed Mar 27 17:15:04 2024 -0300
+
+    Merge pull request #1 from Fernanda-Kipper/feat/integrate-backend
+    
+    Integrating Backend
+
+[33mcommit e596a1d0fe5fd9ac3aa745009eff739e956dddde[m
+Author: Fernanda <nanda.kipper@gmail.com>
+Date:   Wed Mar 27 17:14:01 2024 -0300
+
+    feat: add auth route
+
+[33mcommit e2d6e1bdd19bbf8a66b2df85546c8f44f815af20[m
+Author: Fernanda <nanda.kipper@gmail.com>
+Date:   Wed Mar 27 17:13:57 2024 -0300
+
+    feat: add signup logic
+
+[33mcommit 57285ea2904651ddecc40d7ce6306a7185f13e6f[m
+Author: Fernanda <nanda.kipper@gmail.com>
+Date:   Wed Mar 27 17:13:27 2024 -0300
+
+    feat: create route guard
+
+[33mcommit 81b0631722b9db22cc90b607a2e1fc6d15eb63ad[m
+Author: Fernanda <nanda.kipper@gmail.com>
+Date:   Wed Mar 27 17:13:14 2024 -0300
+
+    feat: adjust login service
+
+[33mcommit 921ced182ac5247edeb3e9134fc1539e06aad252[m
+Author: Fernanda <nanda.kipper@gmail.com>
+Date:   Thu Mar 21 10:24:56 2024 -0300
+
+    feat: add signup page
+
+[33mcommit 205039d80c7a9cc304085a55025de1e3c2201c77[m
+Author: Fernanda <nanda.kipper@gmail.com>
+Date:   Wed Mar 13 23:05:56 2024 -0300
+
+    feat: create login page
+
+[33mcommit 1b71947c516455e6e20a59a5db2a0563a3cac536[m
+Author: Fernanda <nanda.kipper@gmail.com>
+Date:   Tue Mar 12 20:58:05 2024 -0300
+
+    feat: add default layout style
+
+[33mcommit 034458dd5efdafe08ded7e730a1eaf8e26a2fcb7[m
+Author: Fernanda <nanda.kipper@gmail.com>
+Date:   Tue Mar 12 20:00:42 2024 -0300
+
+    feat: creating initial structure
+
+[33mcommit 1873f950ddf3641f50f292d382c86ba6378acf4a[m
+Author: Fernanda <nanda.kipper@gmail.com>
+Date:   Tue Mar 12 19:28:37 2024 -0300
+
+    initial commit
