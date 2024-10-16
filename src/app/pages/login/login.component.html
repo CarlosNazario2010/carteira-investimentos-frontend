@@ -1,29 +1,26 @@
 <app-default-login-layout
-    title="Login into your account"
+    title="InvestX - Login"
     primaryBtnText="Login Now"
     secondaryBtnText="Signup Now"
     (submit)="submit()"
     (navigate)="navigate()"
-    [disablePrimaryBtn]="!loginForm.valid"
 >
     <form [formGroup]="loginForm">
         <app-primary-input
-            formControlName="email"
-            inputName="email"
-            type="email"
-            label="Email"
-            placeholder="johndoe@gmail.com"
+            formControlName="cpf"
+            inputName="cpf"
+            type="text"
+            label="CPF"
+            placeholder="Digite seu CPF"
         >
-            <img src="/assets/svg/email-icon.svg"/>
         </app-primary-input>
         <app-primary-input
-            formControlName="password"
-            inputName="password"
+            formControlName="senha"
+            inputName="senha"
             type="password"
-            label="Your Password"
+            label="Senha"
         >
-        <img src="/assets/svg/password-icon.svg"/>
     </app-primary-input>
-    <span>Forgot password?</span>
+    <span>Esqueceu sua senha?</span>
     </form>
 </app-default-login-layout>

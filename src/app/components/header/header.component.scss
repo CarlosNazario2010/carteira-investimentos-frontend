@@ -1,0 +1,11 @@
+@import "../../../styles/variables.scss";
+
+.header {
+    height: 60px;
+    background: linear-gradient(to right, $primary-color, $secondary-color);
+    color: $gray-bg;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    margin-bottom: 15px;
+}

@@ -1,16 +1,25 @@
 @import "../../../styles/variables.scss";
 
+/*
+ * Estilos para o formulário.
+ * Define a estrutura básica do formulário, incluindo bordas, padding, tamanho,
+ * arredondamento, layout e espaçamento entre elementos.
+ */
 form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    margin-bottom: 34px;
+    box-sizing: border-box; /* Inclui o padding e a borda no cálculo do tamanho total do formulário */
+    border: 2px solid $primary-color; /* Adiciona uma borda sólida de 2px ao formulário, com a cor principal */
+    padding: 20px; /* Define o espaço interno entre o conteúdo e a borda do formulário */
+    width: 100%; /* Define a largura do formulário como 100% */
+    border-radius: 10px; /* Define o raio das bordas do formulário */
+    display: flex; /* Transforma o formulário em um container flexbox */
+    flex-direction: column; /* Define a direção dos elementos filhos do formulário como coluna */
+    gap: 25px; /* Define o espaço entre os elementos filhos do formulário */
+    margin: 25px 0; /* Define as margens superior e inferior do formulário */
 
     span {
-        font-size: 14px;
-        text-decoration: underline;
-        color: $secondary-color;
-        text-align: end;
+        font-size: 14px; /* Define o tamanho da fonte do elemento <span> */
+        text-decoration: underline; /* Adiciona um sublinhado ao texto do elemento <span> */
+        color: $secondary-color; /* Define a cor do texto do elemento <span> */
+        text-align: end; /* Alinha o texto do elemento <span> à direita */
     }
 }

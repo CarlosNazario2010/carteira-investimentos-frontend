@@ -1,92 +1,65 @@
 @import "../../../styles/variables.scss";
 
+/*
+ * Estilos para o componente principal.
+ * Centraliza o conteúdo horizontal e verticalmente,
+ * ocupando toda a altura da viewport.
+ */
 main {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
+    display: flex; /* Define o elemento como um container flexbox */
+    flex-direction: row; /* Define a direção dos itens flex como linha */
+    align-items: center; /* Alinha os itens flex verticalmente no centro do container */
+    justify-content: center; /* Alinha os itens flex horizontalmente no centro do container */
+    height: 100vh; /* Define a altura do elemento como 100% da altura da viewport */
 
-    section {
-        height: 100%; 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .main-section {
-        gap: 8px;
-
-        flex-grow: 1;
-        background-color: $gray-bg;
-    }
-
+    /* Seção de formulário.
+     * Ocupa 30% da largura disponível.
+     */
     .form-section {
-        flex-grow: 0.3;
-        padding: 0 35px;
-
-        img {
-            margin-bottom: 30px;
-        }
-
+        flex-grow: 0.3; /* Permite que o elemento ocupe 30% do espaço disponível */
         h2 {
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 45px;
+            font-size: 20px; /* Define o tamanho da fonte do título */
+            font-weight: bold; /* Define o peso da fonte como negrito */
+            margin: 10px 0; /* Define as margens superior e inferior do título */
+            text-align: center; /* Centraliza o titulo no centro do container */
         }
 
+        /* Wrapper dos botões.
+       * Centraliza os botões verticalmente e horizontalmente.
+       */
         .btn-wrapper {
-            display: flex;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            gap: 30px;
-
-            .divider {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                gap: 20px;
-                width: 100%;
-
-                font-size: 14px;
-                color: $gray-bg;
-                font-weight: 400;
-                text-transform: uppercase;
-
-                div {
-                    flex-grow: 1;
-                    height: 2px;
-                    background-color: $gray-bg;
-                }
-            }
+            display: flex; /* Define o elemento como um container flexbox */
+            flex-direction: column; /* Define a direção dos itens flex como coluna */
+            align-items: center; /* Alinha os itens flex verticalmente no centro do container */
+            justify-content: center; /* Alinha os itens flex horizontalmente no centro do container */
+            width: 100%; /* Define a largura do wrapper como 100% */
+            gap: 20px; /* Define um espaço entre os botões */
 
             button {
-                width: 100%;
-                border-radius: 8px;
-                font-size: 16px;
-                font-weight: 500;
-                border: none;
-                background: transparent;
-                padding: 12px 24px;
-                cursor: pointer;
+                width: 100%; /* Define a largura do botão como 100% */
+                border-radius: 8px; /* Define o raio das bordas do botão */
+                font-size: 16px; /* Define o tamanho da fonte do botão */
+                font-weight: 500; /* Define o peso da fonte do botão */
+                border: none; /* Remove a borda do botão */
+                background: transparent; /* Define o fundo do botão como transparente */
+                padding: 12px 24px; /* Define o padding interno do botão */
+                cursor: pointer; /* Muda o cursor para um ponteiro ao passar o mouse sobre o botão */
 
                 &:disabled {
-                    opacity: 0.8;
+                    /* Estilos para o botão desabilitado */
+                    opacity: 0.8; /* Reduz a opacidade do botão */
                 }
-    
+
                 &.btn-primary {
-                    background-color: $primary-color;
-                    color: white;
-                    box-shadow:0px 8px 12px rgba(148.23004603385925, 64.33935597538948, 255, 0.20000000298023224);
+                    /* Estilos para o botão primário */
+                    background-color: $primary-color; /* Define a cor de fundo do botão */
+                    color: white; /* Define a cor do texto do botão */
                 }
-    
+
                 &.btn-secondary {
-                    border: 1px solid $primary-color;
-                    color: $primary-color;
+                    /* Estilos para o botão secundário */
+                    border: 1px solid $primary-color; /* Adiciona uma borda ao botão */
+                    color: $primary-color; /* Define a cor do texto do botão */
                 }
             }
         }

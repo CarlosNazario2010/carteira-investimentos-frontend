@@ -1,26 +1,45 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
+/**
+ * Componente de layout padrão para telas de login.
+ *
+ * Este componente fornece um layout reutilizável para telas de login,
+ * com campos personalizáveis para título, botões e eventos.
+ */
 @Component({
-  selector: 'app-default-login-layout',
-  standalone: true,
-  imports: [],
-  templateUrl: './default-login-layout.component.html',
-  styleUrl: './default-login-layout.component.scss'
+    selector: 'app-default-login-layout',
+    standalone: true,
+    imports: [],
+    templateUrl: './default-login-layout.component.html',
+    styleUrl: './default-login-layout.component.scss',
 })
 export class DefaultLoginLayoutComponent {
-  @Input() title: string = "";
-  @Input() primaryBtnText: string = "";
-  @Input() secondaryBtnText: string = "";
-  @Input() disablePrimaryBtn: boolean = true;
-  @Output("submit") onSubmit = new EventEmitter();
+    /**
+     * Atributos que entram no componente
+     */
+    @Input() title: string = '';
+    @Input() primaryBtnText: string = '';
+    @Input() secondaryBtnText: string = '';
 
-  @Output("navigate") onNavigate = new EventEmitter();
-  
-  submit(){
-    this.onSubmit.emit();
-  }
+    /**
+     * Ao clicar no botao, o evento sera emitido
+     */
+    @Output('submit') onSubmit = new EventEmitter();
+    @Output('navigate') onNavigate = new EventEmitter();
 
-  navigate(){
-    this.onNavigate.emit();
-  }
+    /**
+     * Emite o evento onSubmit.
+     * O componente pai deve lidar com a lógica de submissao.
+     */
+    submit() {
+        this.onSubmit.emit();
+    }
+
+    /**
+     * Emite o evento onNavigate.
+     * O componente pai deve lidar com a lógica de navegacao.
+     */
+    navigate() {
+        this.onNavigate.emit();
+    }
 }

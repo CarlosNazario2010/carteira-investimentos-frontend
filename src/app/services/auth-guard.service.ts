@@ -1,24 +1,39 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
+import {
+    ActivatedRouteSnapshot,
+    CanActivate,
+    Router,
+    RouterStateSnapshot,
+    UrlTree,
+} from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
+    constructor(private router: Router) {}
 
-  constructor(private router: Router) {}
+    // Método que é chamado antes de permitir o acesso a uma rota protegida
+    canActivate(
+        next: ActivatedRouteSnapshot, // Objeto que contém informações sobre a rota atual
+        state: RouterStateSnapshot // Objeto que contém informações sobre o estado do roteador
+    ):
+        | Observable<boolean | UrlTree> // UrlTree: Representa uma URL com parâmetros de consulta e fragmentos.
+        | Promise<boolean | UrlTree>
+        | boolean
+        | UrlTree {
+        // Obtém o token de autenticação do armazenamento de sessão
+        const authToken = sessionStorage.getItem('auth-token');
 
-  canActivate(
-    next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    const authToken = sessionStorage.getItem('auth-token');
-
-    if (authToken) {
-      return true;
-    } else {
-      this.router.navigate(['/login']);
-      return false;
+        // Verifica se o token de autenticação existe
+        if (authToken) {
+            // Se o token existir, permite o acesso à rota
+            return true;
+        } else {
+            // Se não houver token, redireciona para a página de login
+            this.router.navigate(['/login']);
+            return false;
+        }
     }
-  }
 }

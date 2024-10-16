@@ -1,35 +1,41 @@
 @import "../../../styles/variables.scss";
 
+/*
+ * Wrapper para campos de entrada.
+ * Define o estilo básico para o campo de entrada e seu rótulo associado.
+ */
 .input-wrapper {
-    color: $text-color;
-    font-size: 16px;
-    text-align: start;
+    color: $text-color; /* Define a cor do texto do campo de entrada */
+    font-size: 16px; /* Define o tamanho da fonte do campo de entrada */
+    text-align: start; /* Alinha o texto do campo de entrada à esquerda */
+    display: flex; /* Transforma o elemento em um container flexbox */
+    align-content: stretch; /* Alinha os itens flex na direção transversal do container */
 
+    /* Rótulo do campo de entrada.
+     * Define o estilo do rótulo, incluindo cor, fundo, tamanho, alinhamento e bordas.
+     */
     label {
-        margin-bottom: 10px;
+        background-color: $primary-color; /* Define a cor de fundo do rótulo */
+        color: $gray-bg; /* Define a cor do texto do rótulo */
+        width: 130px; /* Define a largura do rótulo */
+        text-align: center; /* Alinha o texto do rótulo no centro */
+        align-content: center; /* Alinha o conteúdo do rótulo no centro */
+        padding: 0 10px; /* Define o padding interno do rótulo */
+        border-radius: 8px 0 0 8px; /* Define o raio das bordas do rótulo */
     }
 
+    /* Conteúdo do campo de entrada.
+     * Define o estilo do conteúdo do campo de entrada, incluindo largura e estilo do input.
+     */
     .input-content {
-        width: 100%;
-        border-radius: 8px;
-        display: flex;
-        
-        .icon {
-            padding: 12px;
-            background-color: $primary-color;
-            border-radius: 0 8px 8px 0;
-
-            img {
-                height: 20px;
-            }
-        }
+        width: 100%; /* Define a largura do conteúdo do campo de entrada */
 
         input {
-            border: none;
-            border-radius: 8px 0 0 8px;
-            background-color: $gray-secondary-bg;
-            padding: 12px 0 12px 20px;
-            width: 100%;
+            border: none; /* Remove a borda do input */
+            background-color: $gray-secondary-bg; /* Define a cor de fundo do input */
+            padding: 12px 12px; /* Define o padding interno do input */
+            border-radius: 0 8px 8px 0; /* Define o raio das bordas do input */
+            width: 100%; /* Define a largura do input */
         }
     }
 }

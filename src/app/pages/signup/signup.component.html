@@ -1,45 +1,48 @@
 <app-default-login-layout
-    title="Sign in and start today!t"
+    title="InvestX - Signup"
     primaryBtnText="Signup Now"
     secondaryBtnText="Login Now"
     (submit)="submit()"
     (navigate)="navigate()"
-    [disablePrimaryBtn]="!signupForm.valid"
 >
     <form [formGroup]="signupForm">
         <app-primary-input
-            formControlName="name"
-            inputName="name"
+            formControlName="nome"
+            inputName="nome"
             type="text"
-            label="Your name"
-            placeholder="John Doe"
+            label="Nome"
+            placeholder="Seu nome"
         >
-            <img src="/assets/svg/email-icon.svg"/>
+        </app-primary-input>
+        <app-primary-input
+            formControlName="cpf"
+            inputName="cpf"
+            type="text"
+            label="CPF"
+            placeholder="Seu CPF"
+        >
         </app-primary-input>
         <app-primary-input
             formControlName="email"
             inputName="email"
             type="email"
             label="Email"
-            placeholder="johndoe@gmail.com"
+            placeholder="email@gmail.com"
         >
-            <img src="/assets/svg/email-icon.svg"/>
         </app-primary-input>
         <app-primary-input
-            formControlName="password"
-            inputName="password"
+            formControlName="senha"
+            inputName="senha"
             type="password"
-            label="Your Password"
+            label="Senha"
         >
-        <img src="/assets/svg/password-icon.svg"/>
-    </app-primary-input>
-    <app-primary-input
-        formControlName="passwordConfirm"
-        inputName="passwordConfirm"
-        type="password"
-        label="Confirm your Password"
-    >
-        <img src="/assets/svg/password-icon.svg"/>
-    </app-primary-input>
+        </app-primary-input>
+        <app-primary-input
+            formControlName="confirmeSuaSenha"
+            inputName="confirmeSuaSenha"
+            type="password"
+            label="Confirme sua senha"
+        >
+        </app-primary-input>
     </form>
 </app-default-login-layout>
