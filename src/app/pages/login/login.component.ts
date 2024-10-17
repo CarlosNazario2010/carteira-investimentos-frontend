@@ -10,6 +10,8 @@ import { PrimaryInputComponent } from '../../components/primary-input/primary-in
 import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
 import { ToastrService } from 'ngx-toastr';
+import { HeaderComponent } from "../../components/header/header.component";
+import { FooterComponent } from "../../components/footer/footer.component";
 
 // Interface para definir a estrutura do formulário de login
 interface LoginForm {
@@ -21,10 +23,12 @@ interface LoginForm {
     selector: 'app-login',
     standalone: true,
     imports: [
-        DefaultLoginLayoutComponent, // Importa o componente de layout padrão
-        ReactiveFormsModule, // Importa o módulo para utilizar formulários reativos
-        PrimaryInputComponent, // Importa o componente de input primário
-    ],
+    DefaultLoginLayoutComponent, // Importa o componente de layout padrão
+    ReactiveFormsModule, // Importa o módulo para utilizar formulários reativos
+    PrimaryInputComponent,
+    HeaderComponent,
+    FooterComponent
+],
     providers: [LoginService], // Fornece o serviço de login
     templateUrl: './login.component.html',
     styleUrl: './login.component.scss',

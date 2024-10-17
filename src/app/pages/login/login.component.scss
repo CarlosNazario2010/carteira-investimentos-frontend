@@ -1,10 +1,5 @@
 @import "../../../styles/variables.scss";
 
-/*
- * Estilos para o formulário.
- * Define a estrutura básica do formulário, incluindo bordas, padding, tamanho,
- * arredondamento, layout e espaçamento entre elementos.
- */
 form {
     box-sizing: border-box; /* Inclui o padding e a borda no cálculo do tamanho total do formulário */
     border: 2px solid $primary-color; /* Adiciona uma borda sólida de 2px ao formulário, com a cor principal */

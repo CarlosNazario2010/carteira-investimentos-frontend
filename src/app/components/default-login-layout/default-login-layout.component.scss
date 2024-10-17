@@ -1,27 +1,17 @@
 @import "../../../styles/variables.scss";
 
-/*
- * Estilos para o componente principal.
- * Centraliza o conteúdo horizontal e verticalmente,
- * ocupando toda a altura da viewport.
- */
 main {
     display: flex; /* Define o elemento como um container flexbox */
     flex-direction: row; /* Define a direção dos itens flex como linha */
     align-items: center; /* Alinha os itens flex verticalmente no centro do container */
     justify-content: center; /* Alinha os itens flex horizontalmente no centro do container */
-    height: 100vh; /* Define a altura do elemento como 100% da altura da viewport */
-    margin: 30px 0; /* Define a margem cima e baixo do elemento
+    height: 81vh; /* Define a altura do elemento como 100% da altura da viewport */
 
-    /* Seção de formulário.
-     * Ocupa 30% da largura disponível.
-     */
     .form-section {
         flex-grow: 0.3; /* Permite que o elemento ocupe 30% do espaço disponível */
         h2 {
             font-size: 20px; /* Define o tamanho da fonte do título */
             font-weight: bold; /* Define o peso da fonte como negrito */
-            margin: 10px 0; /* Define as margens superior e inferior do título */
             text-align: center; /* Centraliza o titulo no centro do container */
         }
 
