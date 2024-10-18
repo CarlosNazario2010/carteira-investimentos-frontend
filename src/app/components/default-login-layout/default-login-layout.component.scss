@@ -5,7 +5,7 @@ main {
     flex-direction: row; /* Define a direção dos itens flex como linha */
     align-items: center; /* Alinha os itens flex verticalmente no centro do container */
     justify-content: center; /* Alinha os itens flex horizontalmente no centro do container */
-    height: 81vh; /* Define a altura do elemento como 100% da altura da viewport */
+    height: 82vh; /* Define a altura do elemento como 100% da altura da viewport */
 
     .form-section {
         flex-grow: 0.3; /* Permite que o elemento ocupe 30% do espaço disponível */
