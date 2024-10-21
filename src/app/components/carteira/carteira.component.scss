@@ -1,0 +1,34 @@
+@import "../../../styles/variables.scss";
+
+.carteira-container {
+    /* Estilos gerais para o container da carteira */
+    background-color: var(--gray-bg);
+    padding: 20px;
+  }
+
+  .carteira-button {
+    /* Estilos para o botão */
+    background-color: var(--primary-color);
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .carteira-table {
+    /* Estilos para a tabela */
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .carteira-table th,
+  .carteira-table td {
+    border: 1px solid var(--gray-secondary-bg);
+    padding: 8px;
+    text-align: center;
+  }
+
+  .carteira-table th {
+    background-color: var(--gray-secondary-bg);
+  }

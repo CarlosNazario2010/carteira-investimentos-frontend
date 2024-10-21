@@ -1,0 +1,29 @@
+<div class="carteira-container">
+    <button class="carteira-button" (click)="criarCarteira()">
+        Criar Carteira
+    </button>
+    <table class="carteira-table">
+        <thead>
+            <tr>
+                <th>Carteira</th>
+                <th>Conta</th>
+                <th>Nome</th>
+                <th>Saldo</th>
+                <th>Valor Investido</th>
+                <th>Lucro/Prejuízo</th>
+                <th>Total da Carteira</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ carteira?.id }}</td>
+                <td>{{ carteira?.cliente?.id }}</td>
+                <td>{{ carteira?.cliente?.nome }}</td>
+                <td>{{ carteira?.saldo }}</td>
+                <td>{{ carteira?.valorInvestido }}</td>
+                <td>{{ carteira?.lucroPrejuizo }}</td>
+                <td>{{ carteira?.totalDaCarteira }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
