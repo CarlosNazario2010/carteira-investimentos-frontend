@@ -1,7 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Carteira } from '../types/carteira';
-import { tap } from 'rxjs';
+import { catchError, tap, throwError } from 'rxjs';
+import { HttpParams } from '@angular/common/http';
 
 @Injectable({
     providedIn: 'root',
@@ -9,6 +10,9 @@ import { tap } from 'rxjs';
 export class CarteiraService {
     apiUrl: string = 'http://localhost:8080/carteiras';
     token = 'Bearer ' + sessionStorage.getItem('auth-token');
+    clienteId = Number(sessionStorage.getItem('user-id'));
+    carteiraId = Number(sessionStorage.getItem('carteira-id'));
+
     carteira: Carteira | null = null;
 
     constructor(private httpClient: HttpClient) {}
@@ -22,17 +26,39 @@ export class CarteiraService {
         const data = {
             clienteId: parseInt(clienteId.toString()),
         };
-
         return this.httpClient
             .post<Carteira>('http://localhost:8080/carteiras', data, {
                 headers: this.header,
             })
             .pipe(
-                tap((carteira: Carteira) => {
-                    sessionStorage.setItem(
-                        'carteira',
-                        JSON.stringify(carteira)
-                    );
+                tap((value) => {
+                    if (value) {
+                        sessionStorage.setItem(
+                            'carteira-id',
+                            value.id.toString()
+                        );
+                    }
+                })
+            );
+    }
+
+    buscarCarteira() {
+        const params = new HttpParams({
+            fromObject: {
+                clienteId: this.clienteId,
+                carteiraId: this.carteiraId,
+            },
+        });
+
+        return this.httpClient
+            .get<Carteira>('http://localhost:8080/carteiras', {
+                params,
+                headers: this.header,
+            })
+            .pipe(
+                catchError((error) => {
+                    console.error('Erro ao buscar carteira:', error);
+                    return throwError(error);
                 })
             );
     }

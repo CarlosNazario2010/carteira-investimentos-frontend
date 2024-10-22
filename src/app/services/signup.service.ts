@@ -26,8 +26,6 @@ export class SignupService {
                 tap((value) => {
                     // Armazena o token de autenticação no armazenamento de sessão
                     sessionStorage.setItem('auth-token', value.token);
-                    // Exibe o token de autenticação no console (para fins de depuração)
-                    console.log(value.token);
                 })
             );
     }

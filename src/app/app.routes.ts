@@ -4,6 +4,7 @@ import { SignUpComponent } from './pages/signup/signup.component';
 import { HomeComponent } from './pages/home/home.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AuthGuard } from './services/auth-guard.service';
+import { CriarCarteiraComponent } from './pages/criar-carteira/criar-carteira.component';
 
 export const routes: Routes = [
     {
@@ -25,6 +26,11 @@ export const routes: Routes = [
     {
         path: 'dashboard',
         component: DashboardComponent,
+        canActivate: [AuthGuard] // Adiciona o AuthGuard à rota
+    },
+    {
+        path: 'criarCarteira',
+        component: CriarCarteiraComponent,
         canActivate: [AuthGuard] // Adiciona o AuthGuard à rota
     },
 ];

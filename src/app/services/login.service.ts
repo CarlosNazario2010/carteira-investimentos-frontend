@@ -24,7 +24,7 @@ export class LoginService {
                     sessionStorage.setItem('auth-token', value.token);
                     sessionStorage.setItem('user-id', value.id.toString());
                     sessionStorage.setItem('user-name', value.nome);
-                    this.router.navigate(['/dashboard']); // Redireciona para a rota de dashboard
+                    this.router.navigate(['/criarCarteira']); // Redireciona para a rota de dashboard
                 })
             );
     }

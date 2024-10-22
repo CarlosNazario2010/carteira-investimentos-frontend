@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { HeaderComponent } from '../../components/header/header.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { CarteiraComponent } from "../../components/carteira/carteira.component";
@@ -13,4 +13,5 @@ import { CarteiraComponent } from "../../components/carteira/carteira.component"
 export class DashboardComponent {
     clienteNome = sessionStorage.getItem('user-name');
     clienteId = sessionStorage.getItem('user-id');
+    carteiraId = sessionStorage.getItem('carteira-id')
 }

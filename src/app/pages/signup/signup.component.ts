@@ -82,7 +82,7 @@ export class SignUpComponent {
                 next: () => {
                     // Exibe uma mensagem de sucesso se o cadastro for bem-sucedido
                     this.toastService.success('Cadastro feito com sucesso!');
-                    this.router.navigate(['/login']); // Redireciona para a rota de login
+                    this.router.navigate(['/login']); // Redireciona para a rota de criarCarteira
                 },
                 error: () => {
                     // Exibe uma mensagem de erro caso ocorra algum problema

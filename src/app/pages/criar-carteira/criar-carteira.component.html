@@ -1,0 +1,20 @@
+<app-header></app-header>
+<div class="criar-carteira-component">
+    <div class="button-container">
+        <button
+            [disabled]="existeCarteira"
+            class="btn btn-primary"
+            (click)="criarCarteira()"
+        >
+            Criar Carteira
+        </button>
+        <button
+            [disabled]="!existeCarteira"
+            class="btn btn-secondary"
+            (click)="irParaDashboard()"
+        >
+            Ir para o Dashboard
+        </button>
+    </div>
+</div>
+<app-footer></app-footer>
