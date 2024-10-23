@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Carteira } from '../../types/carteira';
 import { CarteiraService } from './../../services/carteira.service';
 import { Component } from '@angular/core';
@@ -16,19 +17,11 @@ export class CarteiraComponent {
 
     constructor(
         private carteiraService: CarteiraService,
+        private router: Router,
         private toastService: ToastrService
     ) {}
 
-    buscarCarteira() {
-        this.carteiraService.buscarCarteira().subscribe({
-            next: (carteira) => {
-                this.carteira = carteira;
-                this.toastService.success('Carteira encontrada com sucesso!');
-                console.log(carteira);
-            },
-            error: (error) => {
-                // Tratar erros específicos
-            },
-        });
+    gerenciarCarteira() {
+        this.router.navigate(['gerenciarCarteira']);
     }
 }

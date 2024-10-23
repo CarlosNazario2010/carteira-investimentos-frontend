@@ -2,14 +2,21 @@
 <div class="criar-carteira-component">
     <div class="button-container">
         <button
-            [disabled]="existeCarteira"
+            [disabled]="isCriarCarteiraDisabled"
             class="btn btn-primary"
             (click)="criarCarteira()"
         >
             Criar Carteira
         </button>
         <button
-            [disabled]="!existeCarteira"
+            [disabled]="isRecarregarCarteiraDisabled"
+            class="btn btn-primary"
+            (click)="recarregarCarteira()"
+        >
+            Recarregar Carteira
+        </button>
+        <button
+            [disabled]="isIrParaDashboardDisabled"
             class="btn btn-secondary"
             (click)="irParaDashboard()"
         >

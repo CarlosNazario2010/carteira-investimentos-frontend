@@ -13,7 +13,7 @@
     top: 100px;
     right: auto;
     display: flex;
-    gap: 200px;
+    gap: 160px;
 }
 
 .btn {
@@ -32,4 +32,9 @@
 .btn-secondary {
     background-color: #66bb6a;
     color: #fff;
+}
+
+.btn[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
 }

@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Carteira } from '../types/carteira';
-import { catchError, tap, throwError } from 'rxjs';
+import { catchError, Observable, tap, throwError } from 'rxjs';
 import { HttpParams } from '@angular/common/http';
 
 @Injectable({
@@ -61,5 +61,12 @@ export class CarteiraService {
                     return throwError(error);
                 })
             );
+    }
+
+    buscarCarteiraPorClienteId(clienteId: number): Observable<Carteira | null> {
+        return this.httpClient
+            .get<Carteira>(`${this.apiUrl}/cliente?clienteId=${clienteId}`, {
+                headers: this.header,
+            });
     }
 }

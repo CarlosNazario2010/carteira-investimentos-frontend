@@ -4,7 +4,7 @@ import { SignUpComponent } from './pages/signup/signup.component';
 import { HomeComponent } from './pages/home/home.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AuthGuard } from './services/auth-guard.service';
-import { CriarCarteiraComponent } from './pages/criar-carteira/criar-carteira.component';
+import { GerenciarCarteiraComponent } from './pages/gerenciar-carteira/gerenciar-carteira.component';
 
 export const routes: Routes = [
     {
@@ -29,8 +29,8 @@ export const routes: Routes = [
         canActivate: [AuthGuard] // Adiciona o AuthGuard à rota
     },
     {
-        path: 'criarCarteira',
-        component: CriarCarteiraComponent,
+        path: 'gerenciarCarteira',
+        component: GerenciarCarteiraComponent,
         canActivate: [AuthGuard] // Adiciona o AuthGuard à rota
     },
 ];
