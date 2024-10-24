@@ -6,6 +6,7 @@ import { provideHttpClient, withFetch } from '@angular/common/http';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideToastr } from 'ngx-toastr';
 import { CarteiraService } from './services/carteira.service';
+import { CommonModule } from '@angular/common';
 
 export const appConfig: ApplicationConfig = {
     providers: [
@@ -13,6 +14,7 @@ export const appConfig: ApplicationConfig = {
         provideAnimations(),
         provideToastr(),
         provideHttpClient(withFetch()),
-        CarteiraService,
+        CommonModule,
+        CarteiraService
     ],
 };

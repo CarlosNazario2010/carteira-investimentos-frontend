@@ -1,0 +1,33 @@
+@import "../../../styles/variables.scss";
+
+
+.button-section {
+    background: linear-gradient(to left, $primary-color, $secondary-color);
+    background-position: center;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn {
+    padding: 10px 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    width: 170px;
+    height: 70px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #007bff; /* $primary-color */
+    color: #fff;
+  }
+
+  .btn-secondary {
+    background-color: #66bb6a; /* $secondary-color */
+    color: #fff;
+  }
+

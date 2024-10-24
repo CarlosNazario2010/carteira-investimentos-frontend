@@ -1,0 +1,48 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Tipo</th>
+            <th>Ticker</th>
+            <th>Quant</th>
+            <th>Preço Médio</th>
+            <th>Preço Atual</th>
+            <th>Variação Diária (Preço)</th>
+            <th>Variação Diária (%)</th>
+            <th>Ganho/Perda Diária</th>
+            <th>Total Investido</th>
+            <th>Total Atualizado</th>
+            <th>Ganho/Perda Total</th>
+            <th>Ganho/Perda (%)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ativo of ativos">
+            <td>{{ ativo.tipo }}</td>
+            <td>{{ ativo.ticker }}</td>
+            <td>{{ ativo.quantidade }}</td>
+            <td>{{ ativo.precoMedio }}</td>
+            <td>{{ ativo.precoAtual }}</td>
+            <td>{{ ativo.variacaoDiariaPreco }}</td>
+            <td>{{ ativo.variacaoDiariaPercentual }}%</td>
+            <td
+            [ngClass]="{
+                'text-success': ativo.ganhoPerdaDiaria >= 0,
+                'text-danger': ativo.ganhoPerdaDiaria < 0
+            }"
+        >
+            {{ ativo.ganhoPerdaDiaria }}
+        </td>
+            <td>{{ ativo.totalInvestido }}</td>
+            <td>{{ ativo.totalAtualizado }}</td>
+            <td
+                [ngClass]="{
+                    'text-success': ativo.ganhoPerdaTotal >= 0,
+                    'text-danger': ativo.ganhoPerdaTotal < 0
+                }"
+            >
+                {{ ativo.ganhoPerdaTotal }}
+            </td>
+            <td>{{ ativo.ganhoPerdaPercentual }}%</td>
+        </tr>
+    </tbody>
+</table>

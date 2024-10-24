@@ -1,0 +1,20 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Saldo</th>
+        <th scope="col">Valor Investido</th>
+        <th scope="col">Lucro/Prejuízo</th>
+        <th scope="col">Total da Carteira</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ carteiraData.saldo }}</td>
+        <td>{{ carteiraData.valorInvestido }}</td>
+        <td [ngClass]="{'text-success': carteiraData.lucroPrejuizo >= 0, 'text-danger': carteiraData.lucroPrejuizo < 0}">
+          {{ carteiraData.lucroPrejuizo }}
+        </td>
+        <td>{{ carteiraData.totalDaCarteira }}</td>
+      </tr>
+    </tbody>
+  </table>

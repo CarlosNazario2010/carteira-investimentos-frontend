@@ -1,3 +1,5 @@
+import { Ativo } from "./ativo";
+
 export type Carteira = {
     id: number;
     cliente: {
@@ -6,7 +8,7 @@ export type Carteira = {
         email: string;
         cpf: string;
     };
-    ativo: any[];
+    ativo: Ativo[];
     saldo: number;
     valorInvestido: number;
     lucroPrejuizo: number;

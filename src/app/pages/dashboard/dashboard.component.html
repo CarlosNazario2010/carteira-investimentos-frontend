@@ -1,8 +1,10 @@
 <app-header class="header">
-    <p>Bem-vindo, {{ clienteNome }} -> (Cliente:  {{ clienteId }}, Carteira: {{ carteiraId }})</p>
+    <p>
+        Bem-vindo, {{ clienteNome }} - (Cliente: {{ clienteId }}, Carteira:
+        {{ carteiraId }}) -
+    </p>
 </app-header>
-
-<app-carteira></app-carteira>
-
-
-
+<app-carteira-button></app-carteira-button>
+<app-carteira-table></app-carteira-table>
+<app-ativo-table></app-ativo-table>
+<app-footer></app-footer>
