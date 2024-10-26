@@ -5,8 +5,9 @@ import {
     ReactiveFormsModule,
 } from '@angular/forms';
 
+
 // Define os tipos de entrada permitidos para o componente
-type InputTypes = 'text' | 'email' | 'password';
+type InputTypes = 'text' | 'email' | 'password' | 'number';
 
 @Component({
     selector: 'app-primary-input',

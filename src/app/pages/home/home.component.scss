@@ -1,3 +1,5 @@
+@import "../../../styles/variables.scss";
+
 .home-component {
     background-image: url("../../../assets/background.jpg");
     background-size: cover;
@@ -14,6 +16,11 @@
     right: 60px; /* Ajuste a distância da direita */
     display: flex;
     gap: 30px; /* Espaçamento entre os botões */
+    button:hover {
+        /* Estilo quando o mouse está sobre o botão */
+        transform: scale(1.1); /* Aumenta o tamanho em 10% */
+        transition: transform 0.3s ease-in-out; /* Adiciona uma transição suave */
+    }
 }
 
 .btn {
@@ -21,15 +28,16 @@
     border: none;
     border-radius: 5px;
     font-size: 20px;
+    width: 130px;
     cursor: pointer;
 }
 
 .btn-primary {
-    background-color: #007bff; /* $primary-color */
+    background-color: $primary-color;
     color: #fff;
-  }
+}
 
-  .btn-secondary {
-    background-color: #66bb6a; /* $secondary-color */
+.btn-secondary {
+    background-color: $secondary-color;
     color: #fff;
-  }
+}

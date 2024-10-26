@@ -25,9 +25,14 @@ main {
             justify-content: center; /* Alinha os itens flex horizontalmente no centro do container */
             width: 100%; /* Define a largura do wrapper como 100% */
             gap: 20px; /* Define um espaço entre os botões */
+            button:hover {
+                /* Estilo quando o mouse está sobre o botão */
+                transform: scale(1.05); /* Aumenta o tamanho em 10% */
+                transition: transform 0.3s ease-in-out; /* Adiciona uma transição suave */
+            }
 
             button {
-                width: 100%; /* Define a largura do botão como 100% */
+                width: 94%; /* Define a largura do botão como 100% */
                 border-radius: 8px; /* Define o raio das bordas do botão */
                 font-size: 16px; /* Define o tamanho da fonte do botão */
                 font-weight: 500; /* Define o peso da fonte do botão */
@@ -44,7 +49,7 @@ main {
                 &.btn-primary {
                     /* Estilos para o botão primário */
                     background-color: $primary-color; /* Define a cor de fundo do botão */
-                    color: white; /* Define a cor do texto do botão */
+                    color: $gray-bg; /* Define a cor do texto do botão */
                 }
 
                 &.btn-secondary {

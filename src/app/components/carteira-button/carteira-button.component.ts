@@ -20,26 +20,27 @@ export class CarteiraButtonComponent {
         private router: Router,
         private toastService: ToastrService
     ) {}
+    adicionarRemoverSaldo() {
+        this.router.navigate(['saldo']);
+    }
+
+    ativosComprados() {
+        this.router.navigate(['ativos-comprados']);
+    }
+
+    ativosVendidos() {
+        this.router.navigate(['ativos-vendidos']);
+    }
+
+    comprarAtivo() {
+        this.router.navigate(['comprar']);
+    }
+
+    venderAtivo() {
+        this.router.navigate(['vender']);
+    }
 
     gerenciarCarteira() {
         this.router.navigate(['gerenciarCarteira']);
-    }
-    ativosVendidos() {
-        throw new Error('Method not implemented.');
-    }
-    ativosComprados() {
-        throw new Error('Method not implemented.');
-    }
-    venderAtivo() {
-        throw new Error('Method not implemented.');
-    }
-    comprarAtivo() {
-        throw new Error('Method not implemented.');
-    }
-    removerSaldo() {
-        throw new Error('Method not implemented.');
-    }
-    adicionarSaldo() {
-        throw new Error('Method not implemented.');
     }
 }

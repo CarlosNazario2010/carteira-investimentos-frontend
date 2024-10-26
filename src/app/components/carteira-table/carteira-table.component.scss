@@ -1,27 +1,28 @@
 @import "../../../styles/variables.scss";
 
 .table {
-    margin: 8px;
+    margin: 6px 6px 0 6px;
   }
 
   .table th,
   .table td {
     padding: 18px;
-    width: 500px;
+    width: 600px;
     text-align: center;
-    border: 3px solid white;
+    border: 2px solid $text-color;
+    font-size: 20px;
   }
 
   .table th {
     background-color: $primary-color;
     border-radius: 14px 14px 0 0;
-    color: white;
+    color: $gray-bg;
   }
 
   .table td {
     background-color: $secondary-color;
     border-radius: 0 0 14px 14px;
-    color: white;
+    color: $gray-bg;
   }
 
   .text-success {

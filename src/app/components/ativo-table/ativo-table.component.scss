@@ -2,27 +2,30 @@
 @import "../../../styles/variables.scss";
 
 .table {
-  margin: 2px;
+  margin: 6px;
   justify-self: center;
+  width: 99%;
 }
 
 .table th,
 .table td {
   padding: 5px;
   text-align: center;
-  border: 1px solid white;
+  font-size: 16px;
+  border: 1px solid $text-color;
 }
 
 .table th {
   background-color: $primary-color;
   border-radius: 10px 10px 0 0;
   width: 100px;
-  color: white;
+  color: $gray-bg;
 }
 
 .table td {
   background-color: $secondary-color;
-  color: white;
+  color: $gray-bg;
+  font-weight: 600;
 }
 
 .text-success {
