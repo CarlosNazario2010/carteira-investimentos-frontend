@@ -1,7 +1,36 @@
 <app-header></app-header>
 <div class="saldo-component">
+    <div class="button-container">
+        <button
+            class="btn btn-primary"
+            (click)="submitAdicionaSaldo()"
+        >
+            Adicionar Saldo
+        </button>
+        <button
+            class="btn btn-primary"
+            (click)="submitRemoveSaldo()"
+        >
+            Remover Saldo
+        </button>
+        <button
+            class="btn btn-secondary"
+            (click)="voltarAoDashboard()"
+        >
+            Voltar ao Dashboard
+        </button>
+    </div>
 
+    <form [formGroup]="saldoForm">
+        <app-carteira-input
+            formControlName="novoSaldo"
+            inputName="novoSaldo"
+            type="number"
+            label="Valor de saldo Adicionar/Remover: "
+            placeholder="Digite o valor de saldo a ser adicionado ou removido"
+        >
+        </app-carteira-input>
+    </form>
 </div>
 
 <app-footer></app-footer>
-

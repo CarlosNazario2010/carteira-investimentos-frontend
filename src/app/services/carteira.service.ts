@@ -64,9 +64,37 @@ export class CarteiraService {
     }
 
     buscarCarteiraPorClienteId(clienteId: number): Observable<Carteira | null> {
-        return this.httpClient
-            .get<Carteira>(`${this.apiUrl}/cliente?clienteId=${clienteId}`, {
+        return this.httpClient.get<Carteira>(
+            `${this.apiUrl}/cliente?clienteId=${clienteId}`,
+            {
                 headers: this.header,
-            });
+            }
+        );
+    }
+
+    adicionaSaldo(novoSaldo: number) {
+        const data = {
+            novoSaldo: parseInt(novoSaldo.toString()),
+        };
+        return this.httpClient.put<Carteira>(
+            'http://localhost:8080/carteiras/' + this.carteiraId + '/adicionar',
+            data,
+            {
+                headers: this.header,
+            }
+        );
+    }
+
+    removeSaldo(novoSaldo: number) {
+        const data = {
+            novoSaldo: parseInt(novoSaldo.toString()),
+        };
+        return this.httpClient.put<Carteira>(
+            'http://localhost:8080/carteiras/' + this.carteiraId + '/remover',
+            data,
+            {
+                headers: this.header,
+            }
+        );
     }
 }

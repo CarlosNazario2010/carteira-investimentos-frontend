@@ -1,0 +1,31 @@
+@import "../../../styles/variables.scss";
+
+.input-wrapper {
+    color: $text-color; /* Define a cor do texto do campo de entrada */
+    font-size: 16px; /* Define o tamanho da fonte do campo de entrada */
+    text-align: start; /* Alinha o texto do campo de entrada à esquerda */
+    display: flex; /* Transforma o elemento em um container flexbox */
+
+    label {
+        background-color: $primary-color; /* Define a cor de fundo do rótulo */
+        color: $gray-bg; /* Define a cor do texto do rótulo */
+        width: 200px; /* Define a largura do rótulo */
+        text-align: center; /* Alinha o texto do rótulo no centro */
+        align-content: center; /* Alinha o conteúdo do rótulo no centro */
+        padding: 0 10px; /* Define o padding interno do rótulo */
+        border: 3px solid $text-color;
+        border-radius: 8px 0 0 8px; /* Define o raio das bordas do rótulo */
+    }
+
+    .input-content {
+        width: 520px; /* Define a largura do conteúdo do campo de entrada */
+
+        input {
+            border: 3px solid $text-color; /* Remove a borda do input */
+            background-color: $gray-secondary-bg; /* Define a cor de fundo do input */
+            padding: 12px 12px; /* Define o padding interno do input */
+            border-radius: 0 8px 8px 0; /* Define o raio das bordas do input */
+            width: 100%; /* Define a largura do input */
+        }
+    }
+}
