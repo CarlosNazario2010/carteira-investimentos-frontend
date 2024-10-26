@@ -97,4 +97,46 @@ export class CarteiraService {
             }
         );
     }
+
+    comprar(
+        ticker: string,
+        quantidade: number,
+        precoMedio: number,
+        tipo: string
+    ) {
+        const data = {
+            ticker: ticker,
+            quantidade: parseInt(quantidade.toString()),
+            precoMedio: parseInt(precoMedio.toString()),
+            tipo: tipo,
+        };
+        return this.httpClient.post<Carteira>(
+            'http://localhost:8080/carteiras/' + this.carteiraId + '/comprar',
+            data,
+            {
+                headers: this.header,
+            }
+        );
+    }
+
+    vender(
+        ticker: string,
+        quantidade: number,
+        precoVenda: number,
+        tipo: string
+    ) {
+        const data = {
+            ticker: ticker,
+            quantidade: parseInt(quantidade.toString()),
+            precoVenda: parseInt(precoVenda.toString()),
+            tipo: tipo,
+        };
+        return this.httpClient.post<Carteira>(
+            'http://localhost:8080/carteiras/' + this.carteiraId + '/vender',
+            data,
+            {
+                headers: this.header,
+            }
+        );
+    }
 }

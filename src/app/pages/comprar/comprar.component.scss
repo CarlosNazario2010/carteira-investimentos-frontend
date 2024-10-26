@@ -10,6 +10,19 @@
     align-items: center;
 }
 
+.form-container {
+    box-sizing: border-box; /* Inclui o padding e a borda no cálculo do tamanho total do formulário */
+    border: 3px solid $primary-color; /* Adiciona uma borda sólida de 2px ao formulário, com a cor principal */
+    padding: 10px; /* Define o espaço interno entre o conteúdo e a borda do formulário */
+    border-radius: 10px; /* Define o raio das bordas do formulário */
+    width: 50%; /* Define a largura do formulário como 100% */
+    display: flex; /* Transforma o formulário em um container flexbox */
+    flex-direction: column; /* Define a direção dos elementos filhos do formulário como coluna */
+    gap: 10px; /* Define o espaço entre os elementos filhos do formulário */
+    margin: 65px 0; /* Define as margens superior e inferior do formulário */
+    align-self: flex-end;
+}
+
 .button-container {
     position: absolute;
     top: 100px;

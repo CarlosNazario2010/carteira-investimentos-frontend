@@ -1,4 +1,47 @@
 <app-header></app-header>
-<div class="vender-component"></div>
+<div class="vender-component">
+    <div class="button-container">
+        <button class="btn btn-primary" (click)="submit()">Vender</button>
+        <button class="btn btn-secondary" (click)="voltarAoDashboard()">
+            Voltar ao Dashboard
+        </button>
+    </div>
+
+    <form [formGroup]="vendaForm" class="form-container">
+        <app-carteira-input
+            formControlName="ticker"
+            inputName="ticker"
+            type="text"
+            label="Ticker"
+            placeholder="Digite o ticker do ativo"
+        >
+        </app-carteira-input>
+        <app-carteira-input
+            formControlName="quantidade"
+            inputName="quantidade"
+            type="number"
+            label="Quantidade"
+            placeholder="Digite a quantidade de ativos"
+        >
+        </app-carteira-input>
+        <app-carteira-input
+            formControlName="precoVenda"
+            inputName="precoVenda"
+            type="number"
+            label="Preco de Venda"
+            placeholder="Digite o preco de venda"
+        >
+        </app-carteira-input>
+        <app-carteira-input
+            formControlName="tipo"
+            inputName="tipo"
+            type="text"
+            label="Tipo"
+            placeholder="Digite o ticker do ativo ACAO / FII / BDR / ETF"
+        >
+        </app-carteira-input>
+    </form>
+</div>
 
 <app-footer></app-footer>
+
