@@ -1,7 +1,7 @@
 # Carteira de Investimentos
 
 **Descrição:**
-Front-end da aplicacao da carteira de investimentos. Feito com o auxilio do Google Gemini, juntamente com o template incial clonado do projeto login-page desenvolvido pela desenvolvedore a youTuber Fernanda Kipper.
+Front-end da aplicacao da carteira de investimentos. Feito com o auxilio do Google Gemini, juntamente com o template incial clonado do projeto login-page desenvolvido pela desenvolvedora e youTuber Fernanda Kipper.
 
 **Tecnologias:**
 * AngularTS
