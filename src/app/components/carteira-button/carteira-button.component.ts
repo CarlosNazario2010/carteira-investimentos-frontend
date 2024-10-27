@@ -20,6 +20,9 @@ export class CarteiraButtonComponent {
         private router: Router,
         private toastService: ToastrService
     ) {}
+
+    /* Metodos da classe somente chamam os componentes responsaveis pela funcionalidade */
+
     adicionarRemoverSaldo() {
         this.router.navigate(['saldo']);
     }

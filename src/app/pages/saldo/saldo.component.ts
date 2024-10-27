@@ -16,6 +16,8 @@ interface SaldoForm {
     novoSaldo: FormControl;
 }
 
+/* Classe que adiciona ou remove saldo na carteira  */
+
 @Component({
     selector: 'app-saldo',
     standalone: true,

@@ -1,20 +1,29 @@
 <table class="table">
     <thead>
-      <tr>
-        <th scope="col">Saldo</th>
-        <th scope="col">Valor Investido</th>
-        <th scope="col">Lucro/Prejuízo</th>
-        <th scope="col">Total da Carteira</th>
-      </tr>
+        <tr>
+            <th scope="col">Saldo</th>
+            <th scope="col">Valor Investido</th>
+            <th scope="col">Lucro/Prejuízo</th>
+            <th scope="col">Total da Carteira</th>
+        </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>{{ carteira.saldo | currency:'BRL':true:'2.2' }}</td>
-        <td>{{ carteira.valorInvestido | currency:'BRL':true:'2.2' }}</td>
-        <td [ngClass]="{'text-success': carteira.lucroPrejuizo >= 0, 'text-danger': carteira.lucroPrejuizo < 0 }">
-          {{ carteira.lucroPrejuizo | currency:'BRL':true:'2.2'}}
-        </td>
-        <td>{{ carteira.totalDaCarteira | currency:'BRL':true:'2.2'}}</td>
-      </tr>
+        <tr>
+            <td>{{ carteira.saldo | currency : "BRL" : true : "2.2" }}</td>
+            <td>
+                {{ carteira.valorInvestido | currency : "BRL" : true : "2.2" }}
+            </td>
+            <td
+                [ngClass]="{
+                    'text-success': carteira.lucroPrejuizo >= 0,
+                    'text-danger': carteira.lucroPrejuizo < 0
+                }"
+            >
+                {{ carteira.lucroPrejuizo | currency : "BRL" : true : "2.2" }}
+            </td>
+            <td>
+                {{ carteira.totalDaCarteira | currency : "BRL" : true : "2.2" }}
+            </td>
+        </tr>
     </tbody>
-  </table>
+</table>

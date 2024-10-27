@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { CarteiraService } from '../../services/carteira.service';
 import { Carteira } from '../../types/carteira';
 
+/* A maioria dos comentarios feitos no ativo-table se aplicam aqui*/
+
 @Component({
     selector: 'app-carteira-table',
     standalone: true,

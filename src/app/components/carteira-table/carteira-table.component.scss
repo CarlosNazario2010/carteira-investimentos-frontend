@@ -1,34 +1,35 @@
 @import "../../../styles/variables.scss";
 
+/* Maioria dos comentarios feitos no ativo-table se aplicam aqui*/
 .table {
     margin: 6px 6px 0 6px;
-  }
+}
 
-  .table th,
-  .table td {
+.table th,
+.table td {
     padding: 18px;
     width: 600px;
     text-align: center;
     border: 2px solid $text-color;
     font-size: 20px;
-  }
+}
 
-  .table th {
+.table th {
     background-color: $primary-color;
     border-radius: 14px 14px 0 0;
     color: $gray-bg;
-  }
+}
 
-  .table td {
+.table td {
     background-color: $secondary-color;
     border-radius: 0 0 14px 14px;
     color: $gray-bg;
-  }
+}
 
-  .text-success {
+.text-success {
     color: $secondary-color;
-  }
+}
 
-  .text-danger {
+.text-danger {
     color: $primary-color;
-  }
+}

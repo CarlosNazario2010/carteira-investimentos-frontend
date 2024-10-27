@@ -1,11 +1,19 @@
 import { Component } from '@angular/core';
-import { HeaderComponent } from "../../components/header/header.component";
-import { FooterComponent } from "../../components/footer/footer.component";
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { HeaderComponent } from '../../components/header/header.component';
+import { FooterComponent } from '../../components/footer/footer.component';
+import {
+    FormControl,
+    FormGroup,
+    ReactiveFormsModule,
+    Validators,
+} from '@angular/forms';
 import { CarteiraInputComponent } from '../../components/carteira-input/carteira-input.component';
 import { CarteiraService } from '../../services/carteira.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+
+/* Classe que realiza a venda de ativos
+    Muitos dos comentarios do comprar component se aplicam aqui */
 
 interface VendaForm {
     ticker: FormControl;
@@ -15,20 +23,19 @@ interface VendaForm {
 }
 
 @Component({
-  selector: 'app-vender',
-  standalone: true,
-  imports: [
-    HeaderComponent,
-    FooterComponent,
-    CarteiraInputComponent,
-    ReactiveFormsModule,
-],
-providers: [CarteiraService],
-  templateUrl: './vender.component.html',
-  styleUrl: './vender.component.scss'
+    selector: 'app-vender',
+    standalone: true,
+    imports: [
+        HeaderComponent,
+        FooterComponent,
+        CarteiraInputComponent,
+        ReactiveFormsModule,
+    ],
+    providers: [CarteiraService],
+    templateUrl: './vender.component.html',
+    styleUrl: './vender.component.scss',
 })
 export class VenderComponent {
-
     vendaForm!: FormGroup<VendaForm>;
 
     constructor(
@@ -41,12 +48,8 @@ export class VenderComponent {
                 Validators.required,
                 Validators.minLength(5),
             ]),
-            quantidade: new FormControl('', [
-                Validators.required,
-            ]),
-            precoVenda: new FormControl('', [
-                Validators.required,
-            ]),
+            quantidade: new FormControl('', [Validators.required]),
+            precoVenda: new FormControl('', [Validators.required]),
             tipo: new FormControl('', [
                 Validators.required,
                 Validators.minLength(3),

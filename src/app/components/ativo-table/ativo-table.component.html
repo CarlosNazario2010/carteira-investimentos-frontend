@@ -20,27 +20,35 @@
             <td>{{ ativo.tipo }}</td>
             <td>{{ ativo.ticker }}</td>
             <td>{{ ativo.quantidade }}</td>
-            <td>{{ ativo.precoMedio | currency:'BRL':true:'2.2' }}</td>
-            <td>{{ ativo.precoAtual | currency:'BRL':true:'2.2' }}</td>
-            <td>{{ ativo.variacaoDiariaPreco | currency:'BRL':true:'2.2' }}</td>
+            <td>{{ ativo.precoMedio | currency : "BRL" : true : "2.2" }}</td>
+            <td>{{ ativo.precoAtual | currency : "BRL" : true : "2.2" }}</td>
+            <td>
+                {{
+                    ativo.variacaoDiariaPreco | currency : "BRL" : true : "2.2"
+                }}
+            </td>
             <td>{{ ativo.variacaoDiariaPercentual }}%</td>
             <td
-            [ngClass]="{
-                'text-success': ativo.ganhoPerdaDiaria >= 0,
-                'text-danger': ativo.ganhoPerdaDiaria < 0
-            }"
-        >
-            {{ ativo.ganhoPerdaDiaria | currency:'BRL':true:'2.2' }}
-        </td>
-            <td>{{ ativo.totalInvestido | currency:'BRL':true:'2.2' }}</td>
-            <td>{{ ativo.totalAtualizado | currency:'BRL':true:'2.2' }}</td>
+                [ngClass]="{
+                    'text-success': ativo.ganhoPerdaDiaria >= 0,
+                    'text-danger': ativo.ganhoPerdaDiaria < 0
+                }"
+            >
+                {{ ativo.ganhoPerdaDiaria | currency : "BRL" : true : "2.2" }}
+            </td>
+            <td>
+                {{ ativo.totalInvestido | currency : "BRL" : true : "2.2" }}
+            </td>
+            <td>
+                {{ ativo.totalAtualizado | currency : "BRL" : true : "2.2" }}
+            </td>
             <td
                 [ngClass]="{
                     'text-success': ativo.ganhoPerdaTotal >= 0,
                     'text-danger': ativo.ganhoPerdaTotal < 0
                 }"
             >
-                {{ ativo.ganhoPerdaTotal | currency:'BRL':true:'2.2' }}
+                {{ ativo.ganhoPerdaTotal | currency : "BRL" : true : "2.2" }}
             </td>
             <td>{{ ativo.ganhoPerdaPercentual }}%</td>
         </tr>

@@ -8,20 +8,30 @@ import { HttpParams } from '@angular/common/http';
     providedIn: 'root',
 })
 export class CarteiraService {
+    // URL base da API utilizada para acessar os recursos de carteira
     apiUrl: string = 'http://localhost:8080/carteiras';
+
+    // dados recuperados do Session Storage do browser
     token = 'Bearer ' + sessionStorage.getItem('auth-token');
     clienteId = Number(sessionStorage.getItem('user-id'));
     carteiraId = Number(sessionStorage.getItem('carteira-id'));
 
+    // Armazena a carteira localmente, podendo ser nulo se ainda não foi carregada
     carteira: Carteira | null = null;
 
     constructor(private httpClient: HttpClient) {}
 
+    // Constrói o cabeçalho HTTP com o token de autenticação
     header: HttpHeaders = new HttpHeaders({
         'Content-Type': 'application/json',
         Authorization: this.token,
     });
 
+    /**
+     * Cria uma nova carteira para o cliente informado
+     * @param clienteId O identificador do cliente
+     * @returns Observable<Carteira> contendo a carteira criada
+     */
     criarCarteira(clienteId: Number) {
         const data = {
             clienteId: parseInt(clienteId.toString()),
@@ -42,6 +52,10 @@ export class CarteiraService {
             );
     }
 
+    /**
+     * Busca a carteira do cliente a partir do clienteId e carteiraId armazenados no service
+     * @returns Observable<Carteira> contendo a carteira recuperada
+     */
     buscarCarteira() {
         const params = new HttpParams({
             fromObject: {
@@ -63,6 +77,11 @@ export class CarteiraService {
             );
     }
 
+    /**
+     * Busca a carteira pelo identificador do cliente
+     * @param clienteId O identificador do cliente
+     * @returns Observable<Carteira | null> contendo a carteira encontrada ou null caso não seja encontrada
+     */
     buscarCarteiraPorClienteId(clienteId: number): Observable<Carteira | null> {
         return this.httpClient.get<Carteira>(
             `${this.apiUrl}/cliente?clienteId=${clienteId}`,
@@ -72,6 +91,11 @@ export class CarteiraService {
         );
     }
 
+    /**
+     * Adiciona saldo na carteira
+     * @param novoSaldo O valor do novo saldo
+     * @returns Observable<Carteira> contendo a carteira atualizada
+     */
     adicionaSaldo(novoSaldo: number) {
         const data = {
             novoSaldo: parseInt(novoSaldo.toString()),
@@ -85,6 +109,11 @@ export class CarteiraService {
         );
     }
 
+    /**
+     * Remove saldo da carteira
+     * @param novoSaldo O valor do novo saldo
+     * @returns Observable<Carteira> contendo a carteira atualizada
+     */
     removeSaldo(novoSaldo: number) {
         const data = {
             novoSaldo: parseInt(novoSaldo.toString()),
@@ -98,6 +127,14 @@ export class CarteiraService {
         );
     }
 
+    /**
+     * Realiza a compra de um ativo
+     * @param ticker O código do ativo
+     * @param quantidade A quantidade de ativos a serem comprados
+     * @param precoMedio O preço médio pago por cada ativo
+     * @param tipo O tipo de operação (compra ou venda)
+     * @returns Observable<Carteira> contendo a carteira atualizada após a compra
+     */
     comprar(
         ticker: string,
         quantidade: number,
@@ -119,6 +156,14 @@ export class CarteiraService {
         );
     }
 
+    /**
+     * Realiza a venda de um ativo
+     * @param ticker O código do ativo
+     * @param quantidade A quantidade de ativos a serem comprados
+     * @param precoVenda O preço de venda de cada ativo
+     * @param tipo O tipo de operação (compra ou venda)
+     * @returns Observable<Carteira> contendo a carteira atualizada após a compra
+     */
     vender(
         ticker: string,
         quantidade: number,

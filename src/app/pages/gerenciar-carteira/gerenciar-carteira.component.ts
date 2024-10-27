@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 import { HeaderComponent } from '../../components/header/header.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 
+/* Classe que eh responsavel por criar ou buscar uma carteira assim que o
+    cliente logar no sistema */
 @Component({
     selector: 'app-gerenciar-carteira',
     standalone: true,
@@ -18,6 +20,9 @@ export class GerenciarCarteiraComponent implements OnInit {
     clienteId = Number(sessionStorage.getItem('user-id'));
     carteira: Carteira | null = null;
     existeCarteira = false;
+
+    /* Classe possui alguns atributos booleanos que verificam, impedem e direcionam
+        o cliente para criar ou buscar sua carteira */
 
     isCriarCarteiraDisabled = false;
     isRecarregarCarteiraDisabled = false;
@@ -35,6 +40,7 @@ export class GerenciarCarteiraComponent implements OnInit {
         this.isIrParaDashboardDisabled = true;
     }
 
+    /* Metodo que cria uma carteira caso o cliente nao possua uma */
     criarCarteira() {
         this.carteiraService.criarCarteira(this.clienteId).subscribe({
             next: () => {
@@ -51,6 +57,7 @@ export class GerenciarCarteiraComponent implements OnInit {
         });
     }
 
+    /* Metodo que busca a carteira do cliente caso este ja possua uma */
     recarregarCarteira() {
         this.carteiraService
             .buscarCarteiraPorClienteId(this.clienteId)
@@ -62,7 +69,9 @@ export class GerenciarCarteiraComponent implements OnInit {
                             carteira.id.toString()
                         );
                         this.carteira = carteira;
-                        this.toastService.success('Carteira encontrada! Va para o Dashboard!');
+                        this.toastService.success(
+                            'Carteira encontrada! Va para o Dashboard!'
+                        );
                     } else {
                         this.isRecarregarCarteiraDisabled = true;
                         this.isIrParaDashboardDisabled = true;

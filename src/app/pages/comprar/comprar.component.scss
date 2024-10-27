@@ -1,10 +1,10 @@
 @import "../../../styles/variables.scss";
 
 .comprar-component {
-    background-image: url("../../../assets/background.jpg");
-    background-size: cover;
+    background-image: url("../../../assets/background.jpg"); /* Define a imagem de fundo */
+    background-size: cover; /* Define o tamanho da imagem de fundo para cobrir todo o elemento */
     background-position: center;
-    height: 82vh;
+    height: 82vh; /* Define a altura do componente */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,6 +55,7 @@
     color: $gray-bg;
 }
 
+/* Desabilita o botao de acordo com os criterios do objetos*/
 .btn[disabled] {
     opacity: 0.5;
     cursor: not-allowed;

@@ -1,37 +1,42 @@
-/* Reutilizando o estilo da tabela base */
 @import "../../../styles/variables.scss";
 
+/* Define uma classe básica para estilizar tabelas */
 .table {
-  margin: 6px;
-  justify-self: center;
-  width: 99%;
+    margin: 6px; /* Adiciona uma margem em todos os lados da tabela */
+    justify-self: center; /* Centraliza a tabela horizontalmente */
+    width: 99%; /* Define a largura da tabela para o % da largura disponível */
 }
 
+/* Define estilos para cabeçalhos (th) e células (td) de tabela */
 .table th,
 .table td {
-  padding: 5px;
-  text-align: center;
-  font-size: 16px;
-  border: 1px solid $text-color;
+    padding: 5px; /* Adiciona um espaço interno em pixels em todos os lados */
+    text-align: center; /* Alinha o texto ao centro */
+    font-size: 16px; /* Define o tamanho da fonte */
+    border: 1px solid $text-color; /* Adiciona uma borda de tantos pixeis sólida com a cor definida em $text-color */
 }
 
+/* Define estilos específicos para cabeçalhos de tabela (th) */
 .table th {
-  background-color: $primary-color;
-  border-radius: 10px 10px 0 0;
-  width: 100px;
-  color: $gray-bg;
+    background-color: $primary-color; /* Define a cor de fundo dos cabeçalhos */
+    border-radius: 10px 10px 0 0; /* Arredonda os cantos superiores dos cabeçalhos */
+    width: 100px; /* Define a largura dos cabeçalhos */
+    color: $gray-bg; /* Define a cor do texto dos cabeçalhos */
 }
 
+/* Define estilos específicos para células de tabela (td) */
 .table td {
-  background-color: $secondary-color;
-  color: $gray-bg;
-  font-weight: 600;
+    background-color: $secondary-color; /* Define a cor de fundo das células */
+    color: $gray-bg; /* Define a cor do texto das células */
+    font-weight: 600; /* Define o peso da fonte das células */
 }
 
+/* Define uma classe para estilizar texto com cor de sucesso */
 .text-success {
-  color: $secondary-color;
+    color: $secondary-color;
 }
 
+/* Define uma classe para estilizar texto com cor de erro */
 .text-danger {
-  color: $primary-color;
+    color: $primary-color;
 }

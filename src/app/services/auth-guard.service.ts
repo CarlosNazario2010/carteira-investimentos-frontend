@@ -8,6 +8,9 @@ import {
 } from '@angular/router';
 import { Observable } from 'rxjs';
 
+/* Classe que fornece uma validacao para que somente o usuario autenticado
+    possa acessar rotas privadas na aplicacao */
+
 @Injectable({
     providedIn: 'root',
 })
