@@ -9,12 +9,12 @@
     </thead>
     <tbody>
       <tr>
-        <td>{{ carteiraData.saldo }}</td>
-        <td>{{ carteiraData.valorInvestido }}</td>
-        <td [ngClass]="{'text-success': carteiraData.lucroPrejuizo >= 0, 'text-danger': carteiraData.lucroPrejuizo < 0}">
-          {{ carteiraData.lucroPrejuizo }}
+        <td>{{ carteira.saldo | currency:'BRL':true:'2.2' }}</td>
+        <td>{{ carteira.valorInvestido | currency:'BRL':true:'2.2' }}</td>
+        <td [ngClass]="{'text-success': carteira.lucroPrejuizo >= 0, 'text-danger': carteira.lucroPrejuizo < 0 }">
+          {{ carteira.lucroPrejuizo | currency:'BRL':true:'2.2'}}
         </td>
-        <td>{{ carteiraData.totalDaCarteira }}</td>
+        <td>{{ carteira.totalDaCarteira | currency:'BRL':true:'2.2'}}</td>
       </tr>
     </tbody>
   </table>

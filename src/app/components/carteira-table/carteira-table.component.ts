@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { CarteiraService } from '../../services/carteira.service';
+import { Carteira } from '../../types/carteira';
 
 @Component({
     selector: 'app-carteira-table',
@@ -9,15 +11,13 @@ import { Component } from '@angular/core';
     styleUrl: './carteira-table.component.scss',
 })
 export class CarteiraTableComponent {
-    carteiraData = {
-        id: 8,
-        cliente: {
-            // ...
-        },
-        ativo: [],
-        saldo: 0.0,
-        valorInvestido: 1000.0,
-        lucroPrejuizo: -50.0,
-        totalDaCarteira: 950.0,
-    };
+    carteira!: Carteira;
+
+    constructor(private carteiraService: CarteiraService) {}
+
+    ngOnInit() {
+        this.carteiraService.buscarCarteira().subscribe((carteira) => {
+            this.carteira = carteira;
+        });
+    }
 }
