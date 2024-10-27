@@ -12,8 +12,10 @@ Front-end da aplicacao da carteira de investimentos. Feito com o auxilio do Goog
 2. Instale as dependências: `npm install`   
 
 **Execução:**
-`npm start`
+`ng serve`
 
+**A aplicacao roda em:** 
+`localhost:4200`
 
 **Tela Home:**
 Tela inicial da Aplicacao. Possui os botoes Login para entrar no sistema caso o usuario ja tem um cadastro no sistema, e o botao SignUp para realizar o cadastro no sistema
