@@ -48,7 +48,7 @@ Tela principal da aplicacao, onde o usuario pode consultar sua carteira. Ela pos
 
 **Tela Adicionar/Remover Saldo**
 Tela que permite a adicionar ou remover saldo na carteira, necessario para a compra de ativos. Caso o usuario tente remover um saldo maior que possui (tentar ficar com saldo negativo) a aplicacao lancara uma mensagem de erro. O saldo sera atualizado na tela de dashboard do usuario
-![Tela Adicionar/Remover da Aplicacao](/src/telasApp/TelaAdicionarRemoverSaldo)
+![Tela Adicionar/Remover da Aplicacao](src/telasApp/TelaAdicionarRemoverSaldo.png)
 
 
 **Tela Comprar Ativo**
