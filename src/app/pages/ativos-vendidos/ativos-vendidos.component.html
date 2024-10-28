@@ -1,4 +1,36 @@
 <app-header></app-header>
-<div class="ativos-vendidos-component"></div>
-
+<div class="titulo-container">
+    <h1 class="titulo-com-degrade">Ativos Comprados</h1>
+    <button class="btn btn-primary" (click)="voltar()">Voltar</button>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Tipo</th>
+            <th>Ticker</th>
+            <th>Quantidade</th>
+            <th>Preço Venda</th>
+            <th>Total Venda</th>
+            <th>Data Venda</th>
+            <th>Preco Medio</th>
+            <th>Total Preco Medio</th>
+            <th>Lucro/Prejuizo</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ativo of ativosVendidos">
+            <td>{{ ativo.id }}</td>
+            <td>{{ ativo.tipo }}</td>
+            <td>{{ ativo.ticker }}</td>
+            <td>{{ ativo.quantidade }}</td>
+            <td>{{ ativo.precoVenda | currency : "BRL" : true : "2.2" }}</td>
+            <td>{{ ativo.totalVenda | currency : "BRL" : true : "2.2" }}</td>
+            <td>{{ ativo.dataVenda | date : "dd-MM-yyyy" }}</td>
+            <td>{{ ativo.precoMedio | currency : "BRL" : true : "2.2" }}</td>
+            <td>{{ ativo.totalPrecoMedio | currency : "BRL" : true : "2.2" }}</td>
+            <td>{{ ativo.lucroPrejuizo | currency : "BRL" : true : "2.2" }}</td>
+        </tr>
+    </tbody>
+</table>
 <app-footer></app-footer>

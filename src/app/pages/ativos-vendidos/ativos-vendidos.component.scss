@@ -1,48 +1,76 @@
 @import "../../../styles/variables.scss";
 
-.ativos-vendidos-component {
-    background-image: url("../../../assets/background.jpg");
-    background-size: cover;
-    background-position: center;
-    height: 82vh;
+.titulo-container {
+    background: linear-gradient(to right, $secondary-color, $primary-color);
+    height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 20px 0;
+    gap: 260px;
+    padding: 20px 0;
 }
 
-.button-container {
-    position: absolute;
-    top: 100px;
-    right: auto;
-    display: flex;
-    gap: 160px;
-    .btn:hover {
-        /* Estilo quando o mouse está sobre o botão */
-        transform: scale(1.1); /* Aumenta o tamanho em 10% */
-        transition: transform 0.3s ease-in-out; /* Adiciona uma transição suave */
-    }
+.titulo-com-degrade {
+    font-size: 2rem;
+    font-weight: 500;
+    color: $gray-secondary-bg;
+    margin: 20px 0;
 }
 
 .btn {
     padding: 10px 20px;
-    border: none;
+    border: 1px solid $gray-bg;
     border-radius: 5px;
     font-size: 20px;
     width: 200px;
     cursor: pointer;
-}
-
-.btn-primary {
-    background-color: $primary-color;
-    color: $gray-bg;
-}
-
-.btn-secondary {
     background-color: $secondary-color;
     color: $gray-bg;
 }
 
-.btn[disabled] {
-    opacity: 0.5;
-    cursor: not-allowed;
+.btn:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.table {
+    margin: 6px; /* Adiciona uma margem em todos os lados da tabela */
+    justify-self: center; /* Centraliza a tabela horizontalmente */
+    width: 99%; /* Define a largura da tabela para o % da largura disponível */
+}
+
+/* Define estilos para cabeçalhos (th) e células (td) de tabela */
+.table th,
+.table td {
+    padding: 5px; /* Adiciona um espaço interno em pixels em todos os lados */
+    text-align: center; /* Alinha o texto ao centro */
+    font-size: 16px; /* Define o tamanho da fonte */
+    border: 1px solid $text-color; /* Adiciona uma borda de tantos pixeis sólida com a cor definida em $text-color */
+    height: 40px;
+}
+
+/* Define estilos específicos para cabeçalhos de tabela (th) */
+.table th {
+    background-color: $primary-color; /* Define a cor de fundo dos cabeçalhos */
+    border-radius: 10px 10px 0 0; /* Arredonda os cantos superiores dos cabeçalhos */
+    width: 100px; /* Define a largura dos cabeçalhos */
+    color: $gray-bg; /* Define a cor do texto dos cabeçalhos */
+}
+
+/* Define estilos específicos para células de tabela (td) */
+.table td {
+    background-color: $secondary-color; /* Define a cor de fundo das células */
+    color: $gray-bg; /* Define a cor do texto das células */
+    font-weight: 600; /* Define o peso da fonte das células */
+}
+
+/* Define uma classe para estilizar texto com cor de sucesso */
+.text-success {
+    color: $secondary-color;
+}
+
+/* Define uma classe para estilizar texto com cor de erro */
+.text-danger {
+    color: $primary-color;
 }
