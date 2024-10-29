@@ -9,20 +9,20 @@ import { HttpParams } from '@angular/common/http';
 })
 export class CarteiraService {
     // URL base da API utilizada para acessar os recursos de carteira
-    apiUrl: string = 'http://localhost:8080/carteiras';
+    private apiUrl: string = 'http://localhost:8080/carteiras';
 
     // dados recuperados do Session Storage do browser
-    token = 'Bearer ' + sessionStorage.getItem('auth-token');
-    clienteId = Number(sessionStorage.getItem('user-id'));
-    carteiraId = Number(sessionStorage.getItem('carteira-id'));
+    private token = 'Bearer ' + sessionStorage.getItem('auth-token');
+    private clienteId = Number(sessionStorage.getItem('user-id'));
+    private carteiraId = Number(sessionStorage.getItem('carteira-id'));
 
     // Armazena a carteira localmente, podendo ser nulo se ainda não foi carregada
-    carteira: Carteira | null = null;
+    private carteira: Carteira | null = null;
 
     constructor(private httpClient: HttpClient) {}
 
     // Constrói o cabeçalho HTTP com o token de autenticação
-    header: HttpHeaders = new HttpHeaders({
+    private header: HttpHeaders = new HttpHeaders({
         'Content-Type': 'application/json',
         Authorization: this.token,
     });
@@ -37,7 +37,7 @@ export class CarteiraService {
             clienteId: parseInt(clienteId.toString()),
         };
         return this.httpClient
-            .post<Carteira>('http://localhost:8080/carteiras', data, {
+            .post<Carteira>(this.apiUrl, data, {
                 headers: this.header,
             })
             .pipe(
@@ -65,7 +65,7 @@ export class CarteiraService {
         });
 
         return this.httpClient
-            .get<Carteira>('http://localhost:8080/carteiras', {
+            .get<Carteira>(this.apiUrl, {
                 params,
                 headers: this.header,
             })
@@ -101,7 +101,7 @@ export class CarteiraService {
             novoSaldo: parseInt(novoSaldo.toString()),
         };
         return this.httpClient.put<Carteira>(
-            'http://localhost:8080/carteiras/' + this.carteiraId + '/adicionar',
+            this.apiUrl + '/' + this.carteiraId + '/adicionar',
             data,
             {
                 headers: this.header,
@@ -119,7 +119,7 @@ export class CarteiraService {
             novoSaldo: parseInt(novoSaldo.toString()),
         };
         return this.httpClient.put<Carteira>(
-            'http://localhost:8080/carteiras/' + this.carteiraId + '/remover',
+            this.apiUrl + '/' + this.carteiraId + '/remover',
             data,
             {
                 headers: this.header,
@@ -148,7 +148,7 @@ export class CarteiraService {
             tipo: tipo,
         };
         return this.httpClient.post<Carteira>(
-            'http://localhost:8080/carteiras/' + this.carteiraId + '/comprar',
+            this.apiUrl + '/' + this.carteiraId + '/comprar',
             data,
             {
                 headers: this.header,
@@ -177,7 +177,7 @@ export class CarteiraService {
             tipo: tipo,
         };
         return this.httpClient.post<Carteira>(
-            'http://localhost:8080/carteiras/' + this.carteiraId + '/vender',
+            this.apiUrl + '/' + this.carteiraId + '/vender',
             data,
             {
                 headers: this.header,
